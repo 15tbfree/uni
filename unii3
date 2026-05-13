@@ -1,0 +1,33 @@
+#include <iostream>
+using namespace std;
+
+// تابع تشخیص عدد اول
+bool isPrime(int n){
+    if(n < 2)
+        return false;
+
+    for(int i = 2; i < n; i++){
+        if(n % i == 0)
+            return false;
+    }
+    return true;
+}
+
+int main(){
+    int count, num;
+    int primeCount = 0;
+
+    cout << "Chand adad mikhaahi vared koni? ";
+    cin >> count;
+
+    for(int i = 1; i <= count; i++){
+        cout << "Adad " << i << ": ";
+        cin >> num;
+
+        if(isPrime(num))
+            primeCount++;
+    }
+
+    cout << "Tedad adad haye aval: " << primeCount;
+}
+
